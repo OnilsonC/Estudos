@@ -12,5 +12,10 @@ public class SAPCommerce {
  		System.out.println("Atualizar item do carrinho");
  	}
 
+ 	public void changeItemFromCart() {
+ 		System.out.println("Trocar item do carrinho");
+ 	}
+ 	
+
 
 }
