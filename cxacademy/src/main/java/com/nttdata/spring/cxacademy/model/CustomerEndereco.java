@@ -1,15 +1,41 @@
 package com.nttdata.spring.cxacademy.model;
 
-public class CustomerEndereco extends CustomerModel {
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.*;
+
+@Entity(name="Endereco")
+public class CustomerEndereco  {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer code;
+
+    @Column(nullable = false)
     private String rua;
+
+    @Column(nullable = false)
     private Integer numero;
+
+    @Column(nullable = false)
     private String complemento;
+
+    @Column(nullable = false)
     private String Cep;
+
+    @Column(nullable = false)
     private String cidade;
+
+    @Column(nullable = false)
     private String estado;
 
-    CustomerEndereco endereco;
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 
     public String getRua() {
         return rua;
@@ -57,10 +83,5 @@ public class CustomerEndereco extends CustomerModel {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    @Override
-    public void setEndereco(String endereco) {
-        super.setEndereco(endereco);
     }
 }

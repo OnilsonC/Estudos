@@ -1,36 +1,19 @@
-package com.nttdata.spring.cxacademy.model;
+package com.nttdata.spring.cxacademy.data;
 
+public class CustomerData {
 
-import javax.persistence.*;
-import java.util.*;
-
-@Entity(name = "Customer")
-public class CustomerModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer code;
 
-    @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false)
     private String sobrenome;
 
-    @Column(nullable = false)
     private String email;
 
-
-    public List<CustomerEndereco> getAllCustomersEnderecos() {
-        return getAllCustomersEnderecos();
-    }
-
-    @Column(nullable = false)
     private String endereco;
 
-
-    @Column(nullable = false)
     private boolean availableOnline;
+
 
 
     public Integer getCode() {
@@ -81,4 +64,3 @@ public class CustomerModel {
         this.availableOnline = availableOnline;
     }
 }
-
