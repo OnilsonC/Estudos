@@ -3,6 +3,7 @@ package br.com.estudoscx;
 import br.com.estudoscx.models.Pessoa;
 import br.com.estudoscx.models.PessoaFisica;
 import br.com.estudoscx.models.PessoaJuridica;
+import br.com.estudoscx.singleton.PessoaSingleton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,8 @@ public class App {
 
 //        System.out.println(c);
 
+        
+
         PessoaJuridica pj = new PessoaJuridica();
         pj.setId("1");
         pj.setCnpj("22.333.666/0001-02");
@@ -40,6 +43,12 @@ public class App {
         pessoa2.setSobrenome("Barros");
         pessoa2.setEmail("danilo@gmail.com");
         pessoa2.setIdade(33);
+        
+        
+        PessoaSingleton.getInstance().getData().add(pessoa);
+        PessoaSingleton.getInstance().getData().add(pessoa2);
+        
+        lerPessoas();
 
 //        System.out.println(pessoa.getNome() + " " +pessoa2.getNome());
 
@@ -58,6 +67,8 @@ public class App {
 //                System.out.println(pessoa2.toString());
 //                System.out.println(pessoa2.getSobrenome());
 
+
+
             List<Pessoa> pessoas = new ArrayList<>();
             pessoas.add(pessoa);
             pessoas.add(pessoa2);
@@ -67,11 +78,11 @@ public class App {
 //               System.out.println(cadastro);
 
                if (cadastro instanceof PessoaFisica) {
-                   System.out.println(((PessoaFisica)cadastro).getSobrenome());
+//                   System.out.println(((PessoaFisica)cadastro).getSobrenome());
                }
 
                if (cadastro instanceof PessoaJuridica) {
-                   System.out.println(((PessoaJuridica)cadastro).getCnpj());
+//                   System.out.println(((PessoaJuridica)cadastro).getCnpj());
                }
             }
 
@@ -86,7 +97,11 @@ public class App {
 
        // fors();
     }
-
+        public static void lerPessoas(){
+            for (PessoaFisica item: PessoaSingleton.getInstance().getData()) {
+                System.out.println(item.getNome());
+            }
+        }
 
 
         public static void fors() {
