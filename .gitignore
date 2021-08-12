@@ -1,2 +1,4 @@
 *.class
 */target/*
+/Spring_Estudoscx/cx/nbproject/
+/Spring_Estudoscx/cx/src/test/java/

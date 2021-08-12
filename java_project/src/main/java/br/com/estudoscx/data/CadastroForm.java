@@ -19,7 +19,6 @@ public class CadastroForm {
     private String email;
 
     @FormParam("idade")
-    @Size(min = 1, max = 3, message = "A idade é obrigatória")
     private Integer idade;
 
     public String getNome() {
