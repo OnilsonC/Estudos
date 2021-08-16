@@ -10,7 +10,7 @@ public interface ProductFacade {
     List<ProductData> getAllProducts();
     
    
-    void saveProduct(ProductData productModel);
+    void saveProduct(ProductData productData);
     
     
     ProductData getProductByCode (Integer productCode);
