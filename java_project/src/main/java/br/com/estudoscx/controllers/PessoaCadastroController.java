@@ -3,6 +3,7 @@ package br.com.estudoscx.controllers;
 
 import br.com.estudoscx.data.CadastroForm;
 import br.com.estudoscx.models.PessoaFisica;
+import br.com.estudoscx.service.PessoaService;
 import br.com.estudoscx.service.impl.PessoaFisicaService;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -28,7 +29,7 @@ import javax.ws.rs.core.Response;
 public class PessoaCadastroController {
     
   
-    private PessoaFisicaService pessoaFisicaService;
+    private PessoaService pessoaService;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
@@ -39,7 +40,7 @@ public class PessoaCadastroController {
     @POST
     public Response register(@BeanParam CadastroForm cadastroForm, @Context HttpServletRequest request) throws URISyntaxException  {
         
-        pessoaFisicaService = new PessoaFisicaService();  
+        pessoaService = new PessoaFisicaService();  
         
     ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
     Validator validator = validatorFactory.getValidator();
@@ -63,6 +64,8 @@ public class PessoaCadastroController {
         
         
         PessoaFisica pessoaFisica = new PessoaFisica();
+        
+        pessoaService.criarPessoa(pessoaFisica);
                 
         String id = UUID.randomUUID().toString();      
         
@@ -71,10 +74,15 @@ public class PessoaCadastroController {
         pessoaFisica.setSobrenome(cadastroForm.getSobrenome());
         pessoaFisica.setIdade(cadastroForm.getIdade());
         pessoaFisica.setEmail(cadastroForm.getEmail());
-        
-        pessoaFisicaService.criarPessoa(pessoaFisica);
-        
-        System.out.println(cadastroForm.getNome());
+        pessoaFisica.setRua(cadastroForm.getRua());
+        pessoaFisica.setNumero(cadastroForm.getNumero());
+        pessoaFisica.setComplemento(cadastroForm.getComplemento());
+        pessoaFisica.setBairro(cadastroForm.getBairro());
+        pessoaFisica.setCidade(cadastroForm.getCidade());
+        pessoaFisica.setEstado(cadastroForm.getEstado());
+        pessoaFisica.setCep(cadastroForm.getCep());
+                        
+                System.out.println(cadastroForm.getNome());
 
         return Response.seeOther(new URI("pessoas")).build();
     }

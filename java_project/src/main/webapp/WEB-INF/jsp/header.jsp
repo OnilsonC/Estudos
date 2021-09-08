@@ -52,20 +52,23 @@ form {
         margin: 0 auto;
         border-radius: 10px;
         padding: 2px;
+        margin-left: 0;
     }
 
     .table {
-        width: 100%;
+        width: 120%;
         margin: 0 auto;
         border: solid 0.5px #ccc;
         border-radius: 10px;
-        padding: 2px;
+        padding: 10px;
+        
     }
 
     table {
         width: 100%;
         margin: 0 auto;
         border-radius: 50px;
+               
     }
 
     tr:last-child {
@@ -84,12 +87,16 @@ form {
     td {
         border-bottom: solid 0.5px #ccc;
         border-right: solid 0.5px #ccc;
-        padding: 10px;
+        width: 16%;
+        padding: 0px;
+        margin: 0 auto;
+        
     }
 
     td:last-child {
         border-right: none;
         padding: 10px;
+        
     }
 
     tr:last-child td {

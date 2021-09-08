@@ -5,6 +5,7 @@
  */
 package br.com.estudoscx.controllers;
 
+import br.com.estudoscx.service.PessoaService;
 import br.com.estudoscx.service.impl.PessoaFisicaService;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
@@ -18,13 +19,13 @@ import org.glassfish.jersey.server.mvc.Viewable;
  */
 @Path("pessoas")
 public class PessoaController {
-    private PessoaFisicaService pessoaFisicaService;
+    private PessoaService pessoaService;
     
     @GET
     public Viewable getPage(@Context HttpServletRequest request){
-        pessoaFisicaService = new PessoaFisicaService();
+        pessoaService = new PessoaFisicaService();
         
-        request.setAttribute("pessoas", pessoaFisicaService.listarpessoas());
+        request.setAttribute("pessoas", pessoaService.listarpessoas());
         
         return new Viewable("/WEB-INF/jsp/pessoas.jsp");
     }

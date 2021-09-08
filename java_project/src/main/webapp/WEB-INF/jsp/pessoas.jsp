@@ -21,8 +21,9 @@
                </a>
            </div>
            
-           <div class="table">
-       <table cellspacing="0" cellpadding="0">
+            <div class="table">
+            <table cellspacing="0" cellpadding="0">
+             
            <thead>
              <tr>
                  <th class="id-collum">ID</th>  
@@ -30,23 +31,41 @@
                  <th>Sobrenome</th>
                  <th>E-mail</th>
                  <th>Idade</th>
+                 <th>Rua</th>
+                 <th>Numero</th>
+                 <th>Complemento</th>
+                 <th>Bairro</th>
+                 <th>Cidade</th>
+                 <th>Estado</th>
+                 <th>CEP</th>
              </tr>  
             </thead>
             
             <tbody>
-         <c:forEach items="${pessoas}" var="pessoa">
-           <tr>
+                
+            <c:forEach items="${pessoas}" var="pessoa">
+             <tr style="text-align: center">
+                   
                 <td>${pessoa.id}</td>
                 <td>${pessoa.nome}</td> 
                 <td>${pessoa.sobrenome}</td> 
                 <td>${pessoa.email}</td> 
-                <td>${pessoa.idade}</td> 
+                <td>${pessoa.idade}</td>
+                <td>${pessoa.rua}</td>
+                <td>${pessoa.numero}</td>
+                <td>${pessoa.complemento}</td>
+                <td>${pessoa.bairro}</td>
+                <td>${pessoa.cidade}</td>
+                <td>${pessoa.estado}</td>
+                <td>${pessoa.cep}</td>
+                              
            </tr> 
-         </c:forEach>
+           </c:forEach>
            </tbody>
+            
        </table>
+       </div>
       </div>
-     </div>
     </body>
    </html> 
 
