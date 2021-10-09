@@ -1,0 +1,32 @@
+
+.bloco{
+  width: 940px;
+  position: relative;
+}
+
+.coluna-tabela {
+  text-align: center;
+ }
+
+ td, th {
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 5px 10px;
+ }
+
+.lista {
+  display: inline-block;
+  margin: 0 30px;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+div ul {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  margin: 0 auto;
+}
+
