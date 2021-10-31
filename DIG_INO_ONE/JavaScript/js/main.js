@@ -54,4 +54,4 @@ var d = new Date();
 //alert(d);
 //alert(d.getDay());
 //alert(d.getHours())
-alert(d.getMonth()+1)
+//alert(d.getMonth()+1)
