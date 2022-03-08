@@ -71,7 +71,7 @@ function getFullName(user){
         grade: 6.8
       },
       {
-        name: 'Mama Jow',
+        name: 'Mama Jay',
         grade: 8.9
       }
   ];
@@ -86,3 +86,75 @@ function getFullName(user){
   console.log('\nLista de Alunos: ');
   console.log(studants);
 
+function somas (a1) {
+    return function (b1) {
+        return a1 + b1;
+    }
+}
+const soma4 = somas(4);
+console.log(soma4(2));
+console.log(soma4(10));
+console.log(soma4(20));
+
+function getNome() {
+    return 'Onilson - JavaScript';
+}
+
+function logNome(nome) {
+    console.log(nome());
+}
+
+const NomeTodo = logNome;
+
+NomeTodo(getNome);
+
+const condicaoPessoa = {
+    nome: 'Onilson',
+    idade: 33
+};
+
+function cadastroPessoa(condicaoPessoa) {
+    return {
+        ... condicaoPessoa,
+        cadastroCompleto: `${ condicaoPessoa.nome } ${condicaoPessoa.idade}`
+    }
+}
+
+const retornoCadastro = cadastroPessoa(condicaoPessoa);
+    console.log(retornoCadastro);
+
+    const estudantes = [
+        {
+            aluno: 'Zé Fonseca',
+            nota: 5.9
+        },
+        {
+            aluno: 'Gabi Low',
+            nota: 7.2
+        },
+        {
+            aluno: 'Joca Loot',
+            nota: 9.4
+        },
+    ]
+
+    function alunosAprovados (listaAluno) {
+        return listaAluno.filter(estudantes => estudantes.nota >= 7);
+    }
+
+    console.log('Alunos aprovados: ')
+    console.log(alunosAprovados(estudantes));
+
+    console.log('\nLista de alunos: ')
+    console.log(estudantes);
+
+   function fn2() {
+       log1('Hoisting de função')
+
+       function log1(value1) {
+           console.log(value1);
+       }
+   }
+   fn2();  
+
+   

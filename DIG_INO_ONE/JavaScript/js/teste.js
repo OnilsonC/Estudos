@@ -73,7 +73,7 @@ var idade = prompt("Qual a sua idade?")
 console.log(validaIdade(idade)) */
 
 function carregar(){
-    alert ("Página carregada")
+//    alert ("Página carregada")
 }
 
 function clicar(retorno){
@@ -101,4 +101,19 @@ function retornar(mouse){
 
 function validator(valor){
     console.log(valor.value)
+}
+
+
+function stay(change){
+    change.innerHTML = "Passe o mouse - PT2";
+    console.log("texto alterado");
+    }
+
+function move(change){
+    change.innerHTML = "Fixou!!"
+}
+
+function validar(opcao){
+    opcao.value;
+    console.log(opcao.value);
 }
